@@ -1,0 +1,98 @@
+/* 주석의 작성 */
+
+/* 전체 선택자: 모든 요소들을 한번에 선택 및 적용 */
+*{
+    color:aqua;
+}
+
+/* 태그 선택자: 모든 태그에 적용 */
+p{
+    color:blueviolet;
+}
+
+h1{
+    color:red;
+}
+
+/* id 선택자: 해당 id에 적용 */
+#title{
+    color:green;
+}
+
+/* id 선택자: 해당 id에 적용하되, 속성을 선택하는 것도 가능 */
+#title2[href="#"]{
+    color:cadetblue;
+}
+
+/* class 선택자: 해당 class에 적용 */
+.yes{
+    color:yellow;
+}
+
+/* class 선택자: 해당 class에 적용하되, 속성을 선택하는 것도 가능 */
+.no[href="#"]{
+    color:brown;
+}
+
+/* 선언부가 같으면 아래와 같이 , 를 사용하여 묶을 수 있음 */
+h3, #title3, .noo{
+    color:cornflowerblue;
+}
+
+/* 자식 선택자: 부모 요소의 하위 객체에 있는 요소에 스타일을 적용 */
+.box > p{
+    color:burlywood;
+    font-size:72px;
+}
+
+/* 하위 선택자: 특정 부모 요소의 하위 객체에 스타일을 적용 */
+div p{
+    font-size:10px;
+}
+
+/* 인접 형제 선택자: 앞에서 선택한 요소 바로 다음에 있는 형제 관계 요소를 선택하여 적용 */
+h1 + h5{
+    font-size:100px;
+}
+
+/* 일반 형제 선택자 : 이전 선택자 요소 다음에 오는 형제 관계 요소들을 선택하여 적용 */
+h2 ~ h5{
+    font-size:200px;
+}
+
+/*
+가상 요소 선택자 : 마치 존재하는 것처럼 취급해 선택 및 적용
+::before : 콘텐츠 앞의 공간을 선택함
+::after : 콘텐츠 뒤의 공간을 선택함
+*/
+p::before{
+    /* content 속성 : css 속성으로 새로운 콘텐츠를 생성함 */
+    content:'<before>';
+}
+p::after{
+    content:'<after>';
+}
+
+/*
+링크 가상 클래스 선택자 : a 태그에서 발생할 수 있는 링크 상태를 이용해 선택
+:link : 방문하지 않음
+:visited : 방문하였음
+*/
+a:link{
+    color:orange;
+}
+a:visited{
+    color:gray;
+}
+
+/*
+동작 가상 클래스 선택자 : 동적으로 변하는 상태를 이용해 선택
+:hover : 마우스를 올렸을 때 선택
+:active : 마우스로 클릭하는 동안 선택
+*/
+#button01:hover{
+    color:blue;
+}
+#button01:active{
+    color:red;
+}
