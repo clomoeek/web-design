@@ -319,9 +319,14 @@
         td : table data, 표의 열을 생성
         rowspan : 행 병합
         colspan : 열 병합
+        col : 하나의 열을 그룹화
+        colgroup : span 속성과 함께 사용해 2개 이상의 열을 그룹화
         -->
         <table>
             <caption>표의 제목</caption>
+            <col style="width:80px">
+            <colgroup span="2" style="width:150px"></colgroup>
+            <col style="width:200px">
             <tr>
                 <th>번호</th>
                 <th>상품명</th>
@@ -351,7 +356,97 @@
             </tr>
         </table>
 
-        <ㅠㄱ
+        <br>
+
+        <!--
+        표에서 아래와 같이 행을 묶어 그룹화 가능.
+        thead : header 영역
+        tfoot : footer 영역
+        tbody : 본문 영역
+        -->
+        <table>
+            <thead>
+                <tr>
+                    <th>헤더</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td>푸터</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>바디</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- scope : table에서 제목을 나타내는 셀의 범위를 지정 -->
+        <table>
+            <tr>
+                <th scope="col">구분</th>
+                <th scope="col">중간고사</th>
+                <th scope="col">기말고사</th>
+            </tr>
+            <tr>
+                <th scope="row">전공</th>
+                <td>A+</td>
+                <td>B0</td>
+            </tr>
+            <tr>
+                <th scope="row">교양</th>
+                <td>C0</td>
+                <td>B+</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!--
+        audio 태그: 오디오 요소를 삽입
+        src : 오디오 파일의 경로
+        controls : 브라우저에 내장된 오디오 컨트롤 패널 가시화
+        -->
+        <audio src="./ARB2_110_kit_horizon_guitar_Amin.wav" controls></audio>
+
+        <br>
+
+        <!-- video 태그 : 비디오 요소를 삽입, 오디오 요소와 설정은 동일 -->
+        <video src="source" controls></video>
+
+        <br>
+
+        <!--
+        시멘틱 태그 sementic tag
+        header : 웹사이트의 최상단
+        nav : 링크 영역
+        section : 논리적으로 관련있는 본문 내용
+        article : 본문에서 독립적인 내용
+        aside : 분리되는 내용
+        footer : 웹사이트의 최하단
+        main : 웹 페이지의 주요 내용
+        -->
+        <header>헤더</header>
+        <nav>네비게이션</nav>
+        <section>섹션</section>
+        <article>아티클</article>
+        <aside>어사이드</aside>
+        <footer>푸터</footer>
+
+        <!-- class 속성 : 클래스명을 지정하여 CSS에서 클래스 선택자로 활용 -->
+        <p class="red-color"></p>
+
+        <!-- id 속성 : 아이디명을 지정하여 CSS에서 아이디 선택자로 활용 -->
+        <h1 id="title"></h1>
+
+        <!-- style 속성 : CSS를 인라인으로 사용 -->
+
+        <!-- title 속성 : 요소에 추가 정보를 삽입할 때 사용, 마우스를 올려놓으면 정보를 표시 -->
+        <p><span title="world wide web consortium">W3C</span>은 국제 웹 표준 개발 기구입니다.</p>
+
+        <!-- data-*속성 : 사용자가 원하는 데이터 속성을 생성 -->
+        <p data-name="spiderman" data-hero="true"></p>
 
     </body>
 </html>
