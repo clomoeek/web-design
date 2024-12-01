@@ -260,10 +260,99 @@
         </select>
 
         <br>
-        
 
+        <!--
+        button 태그: 버튼 요소의 생성
+        type 속성값을 submit, reset, button으로 선택하여 생성이 가능함
+        submit : form을 서버에 전송
+        reset : 상호작용 요소에 입력된 내용을 초기화
+        button : 단순 버튼
+        -->
+        <button type="submit">
+            <image src="./youtube_logo.webp" alt="Youtube logo">
+                유튜브에 업로드 하기
+            </image>
+        </button>
 
-        <!-- okay ?-->
+        <br>
+
+        <!-- disalbed 속성 : 상호작용 요소를 비활성화 -->
+        <input type="text" disabled>
+        <button type="button" disabled>비활성화</button>
+
+        <br>
+
+        <!-- readonly 속성 : 상호작용 요소를 읽기 전용으로 변경 -->
+        <input type="password" readonly>
+        <textarea readonly>read only 테스트</textarea>
+
+        <br>
+
+        <!-- maxlength 속성 : 입력할 수 있는 글자수 제한 -->
+        <textarea maxlength="4"></textarea>
+
+        <br>
+
+        <!-- checked 속성 : 요소를 선택한 상태로 표시 -->
+        <fieldset>
+            <legend>좋아하는 과일</legend>
+            <input type="checkbox" id="banana" name="banana" value="banana">
+            <label for="banana">banana</label><br>
+            <input type="checkbox" id="apple" name="apple" value="apple">
+            <label for="apple">apple</label><br>
+            <input type="checkbox" id="orange" name="orange" value="orange" checked>
+            <label for="orange">orange</label><br>
+        </fieldset>
+
+        <br>
+
+        <!-- placeholder 속성 : 상호작용 요소에 어떤 값을 입력하는지 힌트 -->
+        <input type="tel" placeholder="전화번호를 입력하시오">
+
+        <br>
+
+        <!--
+        table : 표 만들기
+        caption : 표의 제목을 입력
+        tr : table row, 표의 행을 생성
+        th : table header, 표의 헤더(제목을 나타내는 열) 생성
+        td : table data, 표의 열을 생성
+        rowspan : 행 병합
+        colspan : 열 병합
+        -->
+        <table>
+            <caption>표의 제목</caption>
+            <tr>
+                <th>번호</th>
+                <th>상품명</th>
+                <th>수량</th>
+                <th>가격</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>콜라</th>
+                <th>1개</th>
+                <th>1,000원</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>사이다</th>
+                <th>2개</th>
+                <td rowspan="2">1,200원</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <th>탄산수</th>
+                <th>4개</th>
+            </tr>
+            <tr>
+                <td>총 금액</td>
+                <td colspan="3">6,500원</td>
+            </tr>
+        </table>
+
+        <ㅠㄱ
+
     </body>
 </html>
 
