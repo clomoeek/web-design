@@ -1,0 +1,115 @@
+/* 기본 레이아웃 설정 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 중앙 정렬에서 상단 정렬로 수정 */
+    background-color: #f4f4f4;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* padding과 border가 width/height에 포함되도록 */
+}
+
+#left-panel {
+    width: 15%; /* 좌측 패널 고정 너비 */
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto; /* 내용이 많아지면 스크롤 생기도록 */
+}
+
+#main-panel {
+    width: 60%; /* 나머지 공간을 차지 */
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#right-panel {
+    width: 25%; /* 우측 패널 고정 너비 */
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* 파일 목록 */
+#file-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#file-list li {
+    padding: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#file-list .folder-item {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+#file-list .file {
+    padding-left: 20px;
+}
+
+#file-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* 폴더와 파일 이름 스타일 */
+.folder-name {
+    font-weight: bold;
+}
+
+.folder-toggle {
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+.folder-toggle:hover {
+    text-decoration: underline;
+}
+
+/* 파일 내용 영역 */
+#file-content {
+    padding: 20px;
+    overflow-y: auto;
+    height: 80%;
+}
+
+/* 그래프 뷰 스타일 */
+#graph-view {
+    background-color: #ffffff;
+    height: 100%;
+}
+
+#search-input {
+    width: 95%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+
+.link {
+    stroke: #aaa; /* 선 색상 */
+    stroke-width: 2px; /* 선 두께 */
+    opacity: 0.8; /* 선 투명도 */
+}

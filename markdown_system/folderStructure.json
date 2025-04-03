@@ -1,0 +1,18 @@
+{
+    "main": {
+        "home.md": "md-files/main/home.md"
+    },
+
+    "folder1": {
+        "file1.md": "md-files/folder1/file1.md",
+        "file2.md": "md-files/folder1/file2.md",
+        "file6.md": "md-files/folder1/file6.md"
+    },
+    
+    "folder2": {
+        "file3.md": "md-files/folder2/file3.md",
+        "file4.md": "md-files/folder2/file4.md",
+        "file5.md": "md-files/folder2/file5.md",
+        "test1.md": "md-files/folder2/test1.md"
+    }
+}

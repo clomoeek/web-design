@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 웹페이지 타이틀 입력 -->
+    <title>MD Files Viewer</title>
+    
+    <!-- css 파일 설정 -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- marked.js 라이브러리 추가 -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.7/marked.min.js"></script>
+
+    <!-- d3.js 라이브러리 추가 -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- 좌측 브라우저 -->
+        <div id="left-panel">
+            <h1><i>i gotta know ...</i></h1>
+            <input type="text" id="search-input" placeholder="Search..." onkeyup="searchFiles()">
+            <ul id="file-list">
+                <!-- 트리 구조로 폴더와 파일들이 여기에 동적으로 추가됩니다 -->
+            </ul>
+        </div>
+
+        <!-- 메인 브라우저 -->
+        <div id="main-panel">
+            <div id="file-content">
+                <!-- MD 파일 내용이 여기에 표시됩니다 -->
+            </div>
+        </div>
+
+        <!-- 우측 브라우저 -->
+        <div id="right-panel">
+            <div id="graph-view">
+                <!-- 그래프가 여기에 표시됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="d3-graph.js"></script>
+</body>
+</html>
