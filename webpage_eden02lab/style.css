@@ -1,0 +1,584 @@
+/* CSS - STYLE*/
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* HEADER */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    /* padding: 1rem 350px; */
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* display: flex;
+    justify-content: space-evenly;
+    align-items: center; */
+}
+
+/* 새로 추가된 header-content 클래스에 스타일을 적용합니다. */
+.header-content {
+    max-width: 1200px; /* 메인 콘텐츠와 동일한 최대 너비로 설정 */
+    margin: 0 auto; /* 블록 요소를 가로 중앙 정렬 */
+    display: flex; /* h1과 nav를 한 줄에 배치하기 위해 Flexbox 적용 */
+    justify-content: space-between; /* 로고와 메뉴를 양 끝으로 분리 */
+    align-items: center; /* 세로축 중앙 정렬 */
+    padding: 0 20px; /* 헤더 내부 콘텐츠의 좌우 패딩 */
+}
+
+/* PC 환경에서는 햄버거 버튼을 숨깁니다. */
+.hamburger-menu {
+    display: none;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Racing Sans One', sans-serif; /* 핵심! */
+    font-size: 2.5em;
+    cursor: pointer; /* 로고 클릭 가능하도록 */
+}
+
+nav {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: 'Gowun Batang', serif; /* 본문 텍스트에 Gowun Batang 적용 */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px; /* 밑줄 효과를 위해 패딩 추가 */
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* 골드 색상 */
+}
+
+/* 활성 내비게이션 링크 스타일 */
+nav ul li a.active {
+    color: #ffd700;
+    border-bottom: 2px solid #ffd700;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Gowun Batang', serif;
+    text-align: center;
+    padding: 0.25rem 0;
+}
+
+
+/* 히어로 섹션 (Home 페이지에만 해당) */
+#hero {
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    /*padding: 60px 0;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+#hero h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    font-family: 'Racing Sans One', sans-serif; /* 섹션 제목에 Racing Sans One 적용 */
+}
+
+#hero p {
+    font-size: 1.3em;
+    color: #333333;
+    text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    font-family: 'Gowun Batang', serif; /* Hero 본문에 Gowun Batang 적용 */
+    margin-bottom: 50px;
+}
+
+#scrollToAboutBtn {
+    background-color: #6c757d;
+    color: #fff;
+    font-family: 'Gowun Batang', serif; /* 본문 텍스트에 Gowun Batang 적용 */
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#scrollToAboutBtn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* SECTION */
+section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid #ddd;
+    min-height: 100px;
+}
+
+section:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    font-family: 'Racing Sans One', sans-serif; /* 섹션 제목에 Racing Sans One 적용 */
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3c78b8;
+    border-radius: 2px;
+}
+
+section p {
+    font-family: 'Gowun Batang', serif; /* 본문 텍스트에 Gowun Batang 적용 */
+    font-size: 1.1em;
+    color: #333;
+}
+
+
+/* LAB MEMBERS */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    font-family: 'Racing Sans One', sans-serif; /* 섹션 제목에 Racing Sans One 적용 */
+}
+
+.team-member-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 calc(33% - 40px); /* 3개씩 나열 */
+    max-width: 300px;
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.team-member-card img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 0px solid #000000;
+}
+
+.team-member-card h3 {
+    font-size: 2em;
+    color: #3c78b8;
+    margin-bottom: 5px;
+}
+
+.team-member-card p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+
+
+/* RESEARCH AREA */
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.brand-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.brand-item img {
+    max-width: 175px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 100%;
+    /* border: 3px solid #007bff; */
+}
+
+.brand-item h3 {
+    font-family: 'Racing Sans One', sans-serif; /* 섹션 제목에 Racing Sans One 적용 */
+    font-size: 2em;
+    color: #3c78b8;
+    margin-bottom: 10px;
+}
+
+.brand-item p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.brand-detail-btn {
+    background-color: #6c757d;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Gowun Batang', serif; /* 본문 텍스트에 Gowun Batang 적용 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.brand-detail-btn:hover {
+    background-color: #5a6268;
+}
+
+/* 브랜드 상세 페이지 스타일 */
+.brand-detail {
+    /*padding: 30px;*/
+    background-color: #ffffff; /* 연한 배경색 */
+    border-radius: 8px;
+    /*margin-top: 30px;*/
+    text-align: center;
+}
+
+.brand-detail img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 25px;
+    border: 4px solid #007bff;
+    border-radius: 5px;
+}
+
+.brand-detail h3 {
+    font-family: 'Gowun Batang', serif; /* 본문 텍스트에 Gowun Batang 적용 */
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.brand-detail p {
+    font-size: 1.1em;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.back-button {
+    background-color: #6c757d;
+    font-size: 1em;
+    font-family: 'Gowun Batang', serif; /* 본문 텍스트에 Gowun Batang 적용 */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+
+/* CONTACT */
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column; /* 모바일에서는 제목과 메뉴를 세로로 다시 정렬 */
+        align-items: flex-start; /* 좌측 정렬 */
+        /* padding: 1rem 15px; */ /* 모바일 패딩 조정 */
+        padding: 1rem 0;
+    }
+
+    .header-content {
+        flex-direction: row; /* 로고와 햄버거 메뉴를 한 줄에 배치 */
+        justify-content: space-between; /* 로고는 왼쪽, 햄버거 메뉴는 오른쪽으로 분리 */
+        padding: 0 15px; /* 모바일 좌우 패딩 */
+        position: relative; /* nav 메뉴를 absolute로 띄우기 위함 */
+    }
+    
+    /* 햄버거 버튼 스타일 (모바일에서만 보임) */
+    .hamburger-menu {
+        display: flex; /* 햄버거 버튼을 보이게 설정 */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10;
+    }
+    
+    .hamburger-menu span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    /* 햄버거 메뉴 클릭 시 아이콘 모양 변경 */
+    .hamburger-menu.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger-menu.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* nav 메뉴를 숨기는 스타일 */
+    nav {
+        display: none; /* 기본적으로 숨김 */
+        flex-direction: column;
+        width: 100%;
+        background-color: #444; /* 메뉴가 열렸을 때의 배경색 */
+        position: absolute;
+        top: 65px; /* 헤더 높이만큼 아래로 내림 */
+        left: 0;
+        right: 0;
+        z-index: 9;
+        padding-bottom: 10px;
+    }
+
+    /* JavaScript가 .nav.open 클래스를 추가하면 보이게 합니다. */
+    nav.open {
+        display: flex;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    #hero h2 {
+        font-size: 2.5em;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+
+    .brand-grid, .team-members {
+        grid-template-columns: 1fr; /* 한 열로 변경 */
+    }
+
+    .team-member-card {
+        flex: 0 0 90%; /* 모바일에서 카드 너비 조정 */
+    }
+
+    .brand-detail h3 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h2 {
+        font-size: 1.8em;
+    }
+    #hero p {
+        font-size: 1em;
+    }
+    #scrollToAboutBtn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    section h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* --- Results 섹션의 레이아웃 변경 (이전 수정 내용 유지) --- */
+
+.results-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.results-grid h3 {
+    font-family: 'Racing Sans One', sans-serif; /* 섹션 제목에 Racing Sans One 적용 */
+    font-size: 1.5em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.results-grid h4 {
+    font-family: 'Gowun Batang', serif;
+    font-size: 1.2em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.result-item-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* 아래 두 줄을 추가/수정합니다. */
+    height: 350px; /* 기본 카드 높이 설정 (원하는 값으로 조정) */
+    transition: height 0.5s ease-out, transform 0.3s ease, box-shadow 0.3s ease; /* height 트랜지션 추가 */
+    max-width: 450px;
+    width: 90%;
+    cursor: pointer;
+    overflow: hidden; /* 중요: 넘치는 내용을 숨겨서 확장 애니메이션 효과 */
+    position: relative;
+}
+
+.result-item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.result-item-card img {
+    /* 기존 스타일 유지 */
+    max-width: 250px; /* 앨범 아트의 최대 너비. 이 값을 조정하여 이미지 크기 조절 */
+    height: auto; /* 이미지의 비율을 유지하면서 높이를 자동으로 조절 */
+    border-radius: 0px;
+    margin-bottom: 15px;
+    /* border: 3px solid #FF6347; */
+    transition: transform 0.3s ease;
+
+    /* 아래 두 줄을 추가/수정하여 이미지가 카드 내에서 잘 보이도록 합니다. */
+    display: block; /* 이미지를 블록 요소로 만들어 margin: auto가 작동하도록 함 */
+    margin-left: auto; /* 이미지를 가로축에서 중앙 정렬 */
+    margin-right: auto; /* 이미지를 가로축에서 중앙 정렬 */
+
+    /* 카드 확장 시 이미지 약간 축소 효과 (기존 코드 유지) */
+    /* .result-item-card.expanded img { transform: scale(0.9); } */
+}
+
+/* 앨범 세부 정보 보여주기 위한 스타일 (기존과 동일) */
+.result-detail {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 0;
+    margin-top: 15px; /* 세부 정보 상단 여백 추가 */
+}
+
+/* 앨범 세부 정보 활성화 시 패딩 추가 */
+.result-item-card.expanded .result-detail {
+    max-height: 500px; /* 충분히 큰 값으로 설정하여 내용이 다 보이도록 */
+    opacity: 1;
+    padding: 15px 10px;
+}
+
+/* === 추가 === 확장 시 카드 전체 높이 조정 */
+.result-item-card.expanded {
+    height: auto; /* 세부 내용에 맞춰 자동으로 높이 조절 */
+    /* 또는 특정 고정 높이를 주거나, min-height를 사용할 수도 있습니다. */
+    /* 예: min-height: 500px; */
+}
+
+/* 세부 정보 텍스트 정렬 */
+.result-detail h4,
+.result-detail p {
+    text-align: left; /* 세부 정보 내 텍스트 왼쪽 정렬 */
+    margin-left: 0;
+    margin-right: 0;
+}
+
