@@ -1,0 +1,387 @@
+/* 기본 레이아웃 및 폰트 설정 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gowun Batang', serif;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 10px;
+    /* [수정] gap을 제거하고 margin으로 간격 처리 */
+    gap: 0;
+    overflow-y: auto;
+    transition: all 0.5s ease;
+}
+
+/* [수정] 좌측 패널에만 마진을 주어 오른쪽 패널과 간격을 만듭니다. */
+#left-panel {
+    flex-shrink: 0;
+    flex-grow: 0;
+    min-width: 250px;
+    max-width: 400px;
+    overflow-x: auto;
+    margin-right: 10px;
+}
+
+#main-panel {
+    flex-grow: 1;
+    position: relative;
+    padding-top: 60px;
+    /* [수정] 우측 패널과의 간격 */
+    margin-right: 10px;
+}
+
+#right-panel {
+    width: 350px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+}
+
+/* 그래프 넓게 보기 상태일 때의 스타일 */
+.expanded-graph-layout #left-panel {
+    margin-right: 10px;
+}
+
+.expanded-graph-layout #main-panel {
+    flex-grow: 0;
+    min-width: 0;
+    padding: 0;
+    position: relative;
+    /* [수정] 넓게 보기 상태에서는 마진을 제거하여 공간을 차지하지 않게 함 */
+    margin-right: 0;
+}
+
+.expanded-graph-layout #main-panel #file-content {
+    display: none;
+}
+
+.expanded-graph-layout #right-panel {
+    width: 70%;
+    flex-grow: 1;
+    min-width: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* 넓게 보기 상태에서 그래프 뷰 자체에 패딩을 적용하여 여백을 확보 */
+.expanded-graph-layout #graph-view {
+    padding: 20px;
+}
+
+/* 넓게 보기 상태에서 컨트롤 위치 조정 */
+.expanded-graph-layout #graph-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 패널 공통 스타일 */
+#left-panel, #main-panel, #right-panel {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+#left-panel h1 {
+    font-family: 'Workbench', sans-serif;
+    font-weight: normal; 
+}
+
+#main-panel-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+    font-family: 'Gowun Batang', serif;
+}
+
+/* Graph View 토글 버튼 스타일 */
+#toggle-graph-btn, #expand-graph-btn, #restore-graph-btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    font-family: 'Gowun Batang', serif;
+}
+
+#toggle-graph-btn:hover, #expand-graph-btn:hover, #restore-graph-btn:hover {
+    background-color: #e9ecef;
+}
+
+#search-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 30px 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#search-input:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#clear-search-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #888;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+#clear-search-btn:hover {
+    color: #333;
+}
+
+#file-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#file-list ul, #file-list li {
+    list-style: none;
+    padding-left: 0;
+}
+
+#file-list li {
+    padding: 10px 15px;
+    margin: 3px 0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    user-select: none;
+    white-space: nowrap;
+}
+
+#file-list .folder-item:hover {
+    background-color: #e0e0e0;
+}
+
+#file-list .file:hover {
+    background-color: #e9ecef;
+}
+
+#file-list .folder-item:has(ul:hover),
+#file-list .folder-item:has(li:hover) {
+    background-color: transparent;
+}
+
+#file-list .folder-item {
+    font-weight: 600;
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+#file-list .file {
+    padding-left: 20px;
+    font-weight: 400;
+}
+
+.folder-name {
+    font-weight: 600;
+}
+
+.folder-toggle {
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6c757d;
+    transition: color 0.2s;
+}
+
+.folder-toggle:hover {
+    color: #343a40;
+}
+
+#file-content {
+    padding: 20px;
+    line-height: 1.8;
+}
+
+#file-content h1, h2, h3, h4, h5, h6 {
+    color: #212529;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+#file-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#file-content a:hover {
+    text-decoration: underline;
+}
+
+#file-content code {
+    background-color: #f8f9fa;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Gowun Batang', serif;
+}
+
+#file-content pre {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+#graph-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#graph-view {
+    position: relative;
+    background-color: #f8f9fa;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#graph-view svg {
+    width: 100%;
+    height: 100%;
+}
+
+.links line {
+    stroke: #adb5bd;
+    stroke-opacity: 0.8;
+}
+
+.nodes circle {
+    stroke: #ffffff;
+    stroke-width: 2px;
+}
+
+.labels text {
+    fill: #495057;
+    font-family: 'Gowun Batang', serif;
+    font-size: 11px;
+}
+
+#graph-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+#graph-controls label {
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#graph-controls label span {
+    font-weight: normal;
+    color: #495057;
+    width: 25px;
+}
+
+#graph-controls input[type="range"] {
+    /*-webkit-appearance: none;*/
+    flex-grow: 1;
+    height: 6px;
+    background: #e9ecef;
+    outline: none;
+    border-radius: 3px;
+    margin: 0;
+}
+
+#graph-controls input[type="range"]::-webkit-slider-thumb {
+    /*-webkit-appearance: none;*/
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+#graph-controls input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+#graph-controls button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-bottom: 20px;
+    font-family: 'Gowun Batang', serif;
+}
+
+#graph-controls button:hover {
+    background-color: #e9ecef;
+}
+
+#footer {
+    text-align: center;
+    padding: 0px;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 14px;
+    border-top: 1px solid #e9ecef;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}

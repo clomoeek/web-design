@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Files Viewer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Workbench&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.7/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="left-panel">
+            <h1><i>ZETTELKASTEN</i></h1>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button id="clear-search-btn" style="display: none;">X</button>
+            </div>
+            <ul id="file-list">
+                </ul>
+        </div>
+
+        <div id="main-panel">
+            <div id="main-panel-buttons">
+                <button id="expand-graph-btn" style="display: none;">＜ Expand Graph</button>
+                <button id="toggle-graph-btn">Hide Graph ＞</button>
+            </div>
+            <div id="file-content">
+                </div>
+        </div>
+
+        <div id="right-panel">
+            <div id="graph-container">
+                <div id="graph-controls">
+                    <button id="restore-graph-btn" style="display: none;">Return Graph</button>
+                    <label>Distance<br>
+                    <input type="range" id="link-distance" min="0" max="100" value="50"> <span id="distance-value">50</span></label><br>
+                    <label>Strength<br>
+                    <input type="range" id="charge-strength" min="-100" max="10" value="-50"> <span id="charge-value">-50</span></label><br>
+                </div>
+                <div id="graph-view">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>Copyright © 2024 Zettelkasten Viewer. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="d3-graph.js"></script>
+</body>
+</html>
