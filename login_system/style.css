@@ -1,40 +1,94 @@
+/* body 태그에 적용될 스타일입니다. 페이지 전체의 기본 스타일을 설정합니다. */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .login-container {
-    background-color: white;
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  input {
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  button {
-    margin-top: 15px;
-    padding: 10px;
-    width: 100%;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #error-message {
-    color: red;
-    margin-top: 10px;
-  }
-  
+
+  /* 기본 글꼴을 Arial로 설정하고, Arial이 없으면 sans-serif 계열의 다른 글꼴을 사용합니다. */
+  font-family: Arial, sans-serif;
+
+  /* 페이지의 배경색을 밝은 회색(#f5f5f5)으로 설정합니다. */
+  background-color: #f5f5f5;
+
+  /* 자식 요소(login-container)를 flexbox로 정렬합니다. */
+  display: flex;
+
+  /* 자식 요소를 가로 방향(수평)으로 중앙에 정렬합니다. */
+  justify-content: center;
+
+  /* 자식 요소를 세로 방향(수직)으로 중앙에 정렬합니다. */
+  align-items: center;
+
+  /* body의 높이를 화면 전체 높이(100vh)로 설정하여, 로그인 폼이 화면 정중앙에 오도록 합니다. */
+  height: 100vh;
+}
+
+/* class가 "login-container"인 div에 적용될 스타일입니다. */
+.login-container {
+
+  /* 배경색을 흰색으로 설정합니다. */
+  background-color: white;
+
+  /* 안쪽 여백을 2em(글자 크기의 2배)으로 설정합니다. */
+  padding: 2em;
+
+  /* 모서리를 10px만큼 둥글게 만듭니다. */
+  border-radius: 10px;
+
+  /* 그림자 효과를 추가하여 입체감을 줍니다. */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* 내부 텍스트를 중앙으로 정렬합니다. */
+  text-align: center;
+}
+
+/* 모든 input 태그에 적용될 스타일입니다. */
+input {
+
+  /* 안쪽 여백을 10px로 설정합니다. */
+  padding: 10px;
+
+  /* 위쪽 바깥 여백을 10px로 설정합니다. */
+  margin-top: 10px;
+
+  /* 너비를 부모 요소(login-container)의 100%로 채웁니다. */
+  width: 100%;
+
+  /* padding과 border를 너비(width)에 포함시켜 계산합니다. */
+  box-sizing: border-box;
+}
+
+/* 모든 button 태그에 적용될 스타일입니다. */
+button {
+
+  /* 위쪽 바깥 여백을 15px로 설정합니다. */
+  margin-top: 15px;
+
+  /* 안쪽 여백을 10px로 설정합니다. */
+  padding: 10px;
+
+  /* 너비를 100%로 설정합니다. */
+  width: 100%;
+
+  /* 배경색을 파란색 계열(#3498db)로 설정합니다. */
+  background-color: #3498db;
+
+  /* 글자색을 흰색으로 설정합니다. */
+  color: white;
+
+  /* 테두리를 없앱니다. */
+  border: none;
+
+  /* 모서리를 5px만큼 둥글게 만듭니다. */
+  border-radius: 5px;
+
+  /* 마우스 커서를 올렸을 때 손가락 모양으로 변경합니다. */
+  cursor: pointer;
+}
+
+/* id가 "error-message"인 요소에 적용될 스타일입니다. */
+#error-message {
+
+  /* 글자색을 빨간색으로 설정합니다. */
+  color: red;
+
+  /* 위쪽 바깥 여백을 10px로 설정합니다. */
+  margin-top: 10px;
+}

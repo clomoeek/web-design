@@ -41,7 +41,7 @@ async function loadFolderStructure() {
         
         await preloadAllFiles();
 
-        const homeFile = allFiles.find(file => file.name === 'home.md');
+        const homeFile = allFiles.find(file => file.name === 'Home.md');
         if (homeFile) {
             loadFileContent(homeFile.path, homeFile.name);
         }
