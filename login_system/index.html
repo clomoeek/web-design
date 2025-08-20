@@ -1,47 +1,47 @@
-<!-- 이 문서가 HTML5 문서임을 선언합니다. -->
+<!-- 이 문서는 HTML5 문서임을 선언합니다. -->
 <!DOCTYPE html>
 
-<!-- HTML 문서의 시작을 나타내며, 주 사용 언어가 한국어임을 명시합니다. -->
+<!-- HTML 문서의 시작을 나타내며, 주 언어가 한국어임을 명시합니다. -->
 <html lang="ko">
 
-<!-- 문서의 메타데이터(설정 정보)를 담는 부분입니다. -->
+<!-- 이 부분은 문서의 메타데이터(설정 정보)를 담는 곳입니다. -->
 <head>
 
   <!-- 문자 인코딩을 UTF-8로 설정하여 한글 깨짐을 방지합니다. -->
   <meta charset="UTF-8" />
 
-  <!-- 다양한 기기(모바일, 태블릿 등)에서 화면 크기에 맞게 페이지를 표시하도록 설정합니다. -->
+  <!-- 다양한 기기(MOBILE, TABLET 등)에서 화면 크기에 맞게 페이지가 표시되도록 설정합니다. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <!-- 웹 브라우저 탭에 표시될 페이지의 제목입니다. -->
   <title>로그인 페이지</title>
 
-  <!-- 외부 CSS 파일(style.css)을 연결하여 페이지의 스타일을 적용합니다. -->
+  <!-- 외부 CSS 파일(STYLE.CSS)을 연결하여 페이지에 스타일을 적용합니다. -->
   <link rel="stylesheet" href="style.css" />
 
 </head>
 
-<!-- 웹 브라우저에 실제로 표시될 콘텐츠를 담는 부분입니다. -->
+<!-- 이 부분은 웹 브라우저에 실제로 표시될 내용을 담는 곳입니다. -->
 <body>
 
-  <!-- 로그인 관련 요소들을 묶는 컨테이너입니다. class는 CSS에서 스타일을 적용하기 위해 사용됩니다. -->
+  <!-- 로그인 관련 요소들을 그룹화하는 컨테이너입니다. CLASS는 CSS에서 스타일을 적용하기 위해 사용됩니다. -->
   <div class="login-container">
 
     <!-- "로그인"이라는 제목을 표시하는 2단계 제목 태그입니다. -->
     <h2>로그인</h2>
 
-    <!-- 비밀번호를 입력받는 필드입니다. type="password"는 입력 내용을 가려줍니다. -->
+    <!-- 비밀번호를 입력하는 필드입니다. TYPE="PASSWORD"는 입력 내용을 가려줍니다. -->
     <input type="password" id="password" placeholder="비밀번호를 입력하세요" />
 
-    <!-- 클릭 시 login() JavaScript 함수를 실행하는 버튼입니다. -->
+    <!-- 클릭 시 LOGIN() JAVASCRIPT 함수를 실행하는 버튼입니다. -->
     <button onclick="login()">로그인</button>
 
-    <!-- 오류 메시지를 표시하기 위한 단락(paragraph)입니다. 처음에는 비어있습니다. -->
+    <!-- 오류 메시지를 표시하기 위한 문단입니다. 처음에는 비어있습니다. -->
     <p id="error-message"></p>
 
   </div>
 
-  <!-- 외부 JavaScript 파일(login.js)을 연결하여 페이지의 동작을 제어합니다. -->
+  <!-- 외부 JAVASCRIPT 파일(LOGIN.JS)을 연결하여 페이지의 동작을 제어합니다. -->
   <script src="login.js"></script>
 
 </body>
